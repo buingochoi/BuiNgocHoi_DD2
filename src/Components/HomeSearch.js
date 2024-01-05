@@ -43,8 +43,6 @@ function HomeSearch(){
                     5
                 </Box>
             </Pressable>
-          
-
         </HStack>
 
        

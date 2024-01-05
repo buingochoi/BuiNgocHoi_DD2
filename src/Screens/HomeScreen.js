@@ -1,14 +1,15 @@
 import { Box } from "native-base";
-import React from "react";
 import Colors from "../color";
-import HomeSearch from "../Components/HomeSearch";
-import HomeProducts from "../Components/HomeProducts";
-function HomeScreen(){
-    return(
-        <Box flex={1} bg={Colors.subGreen}>
+import HomeSearch from "../../component/HomeSearch";
+import HomeProducts from "../../component/HomeProducts";
+
+function HomeScreen() {
+    return ( 
+        <Box flex={1} bg={Colors.subgreen}>
             <HomeSearch/>
-            <HomeProducts />
+            <HomeProducts/>
         </Box>
-    );
+     );
 }
+
 export default HomeScreen;
