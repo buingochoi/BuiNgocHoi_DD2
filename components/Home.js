@@ -10,12 +10,16 @@ import ProductMenClothing from './products/ProductMenClothing';
 import ProductWomenClothing from './products/ProductWomenClothing';
 import Search from './products/Search';
 import Slider from './products/Slider';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function Home({ navigation }) {
   const navigateToProductDetail = (item) => {
    
     navigation.navigate('ProductDetail', { item });
   };
+
+ 
   return (
     <View style={styles.container}>
      <ScrollView>
@@ -25,9 +29,12 @@ export default function Home({ navigation }) {
       <View style={styles.slider}>
         <Slider />
       </View>    
+      
         <View>
+        
           <Text style={styles.textnewproduct}>ALL PRODUCTS</Text>
           <Product navigateToProductDetail={navigateToProductDetail} />
+
           <Text style={styles.textnewproduct}>JEWELRY</Text>
           <ProductJewelery navigateToProductDetail={navigateToProductDetail} />
           <Text style={styles.textnewproduct}>ELECTRONIC</Text>

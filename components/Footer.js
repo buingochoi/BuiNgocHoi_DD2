@@ -13,7 +13,12 @@ export default function Footer({ navigation }) {
             <Text style={{fontSize:12}}>Home</Text>
           </View>
         </TouchableOpacity>
-
+        <TouchableOpacity onPress={() => navigation.navigate('Category')}>
+          <View style={styles.centericon}>          
+              <Icon name="shopping-cart" size={20} color="black" />       
+            <Text style={{fontSize:12}}>Category</Text>
+          </View>
+        </TouchableOpacity>
 
        
         <TouchableOpacity onPress={() => navigation.navigate('Cart')}>

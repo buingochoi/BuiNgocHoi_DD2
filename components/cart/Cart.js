@@ -112,6 +112,17 @@ export default function Cart({navigation,navigateToProductDetail}) {
       console.error('Lỗi khi lưu giỏ hàng mới:', error);
     });
 };
+const handleSubmit = () => {
+  setCartItems([]);
+  AsyncStorage.setItem("cart", JSON.stringify([]))
+    .then((result) => {
+      alert("thanh toán thành công!");
+      console.log("Thanh toán thành công!");
+    })
+    .catch((err) => {
+      console.log("Error: ", err);
+    });
+};
 
 
 return (
@@ -167,7 +178,7 @@ return (
       <Text style={styles.totalText}>Total payment:</Text>
       <Text style={styles.totalPrice}>${calculateTotalPrice()}</Text>
     </View>
-    <TouchableOpacity style={styles.paymentButton}>
+    <TouchableOpacity style={styles.paymentButton} onPress={() => handleSubmit()}>
       <Text style={styles.paymentButtonText}>Buy</Text>
     </TouchableOpacity>
   </View>
